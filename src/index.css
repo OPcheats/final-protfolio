@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm Terminal Aesthetic - charcoal with amber phosphor glow */
+    --background: 20 14% 4%;
+    --foreground: 45 30% 96%;
+
+    --card: 20 12% 7%;
+    --card-foreground: 45 30% 96%;
+
+    --popover: 20 12% 7%;
+    --popover-foreground: 45 30% 96%;
+
+    /* Warm amber/orange - like phosphor terminals */
+    --primary: 32 95% 55%;
+    --primary-foreground: 20 14% 4%;
+
+    /* Muted warm tone */
+    --secondary: 20 8% 18%;
+    --secondary-foreground: 45 20% 85%;
+
+    --muted: 20 8% 12%;
+    --muted-foreground: 30 10% 50%;
+
+    /* Accent - brighter amber */
+    --accent: 38 100% 60%;
+    --accent-foreground: 20 14% 4%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 45 30% 96%;
+
+    --border: 20 8% 15%;
+    --input: 20 8% 15%;
+    --ring: 32 95% 55%;
+
+    --radius: 0.25rem;
+
+    /* Custom palette */
+    --amber: 32 95% 55%;
+    --amber-glow: 38 100% 60%;
+    --amber-dim: 30 60% 35%;
+    --charcoal: 20 14% 4%;
+    --charcoal-light: 20 12% 10%;
+    --cream: 45 30% 96%;
+    --cream-muted: 40 15% 75%;
+
+    /* Sidebar */
+    --sidebar-background: 20 12% 6%;
+    --sidebar-foreground: 45 30% 96%;
+    --sidebar-primary: 32 95% 55%;
+    --sidebar-primary-foreground: 20 14% 4%;
+    --sidebar-accent: 20 8% 12%;
+    --sidebar-accent-foreground: 45 30% 96%;
+    --sidebar-border: 20 8% 15%;
+    --sidebar-ring: 32 95% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  /* Syne for headlines - angular, brutalist */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  /* JetBrains Mono for code/tech elements */
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Brutalist card - sharp edges, raw */
+  .brutalist-card {
+    @apply bg-card border-2 border-border;
+    box-shadow: 4px 4px 0 0 hsl(var(--border));
+  }
+
+  .brutalist-card-hover {
+    @apply brutalist-card transition-all duration-200;
+  }
+
+  .brutalist-card-hover:hover {
+    @apply border-primary;
+    box-shadow: 6px 6px 0 0 hsl(var(--primary) / 0.3);
+    transform: translate(-2px, -2px);
+  }
+
+  /* Warm glow effect */
+  .amber-glow {
+    text-shadow: 
+      0 0 20px hsl(var(--amber) / 0.6),
+      0 0 40px hsl(var(--amber) / 0.4),
+      0 0 60px hsl(var(--amber) / 0.2);
+  }
+
+  .amber-glow-subtle {
+    text-shadow: 0 0 30px hsl(var(--amber) / 0.3);
+  }
+
+  /* Terminal-style text gradient */
+  .gradient-amber {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--amber)) 0%,
+      hsl(var(--amber-glow)) 50%,
+      hsl(var(--cream)) 100%
+    );
+  }
+
+  /* Section styling */
+  .section-container {
+    @apply relative max-w-6xl mx-auto px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight;
+    line-height: 1.05;
+  }
+
+  .section-label {
+    @apply font-mono text-xs uppercase tracking-[0.2em] text-primary mb-6 block;
+  }
+
+  /* Brutalist button */
+  .btn-brutalist {
+    @apply px-6 py-3 bg-primary text-primary-foreground font-semibold 
+           border-2 border-primary transition-all duration-150;
+    box-shadow: 3px 3px 0 0 hsl(var(--foreground));
+  }
+
+  .btn-brutalist:hover {
+    box-shadow: 5px 5px 0 0 hsl(var(--foreground));
+    transform: translate(-2px, -2px);
+  }
+
+  .btn-brutalist:active {
+    box-shadow: 1px 1px 0 0 hsl(var(--foreground));
+    transform: translate(2px, 2px);
+  }
+
+  /* Outline version */
+  .btn-brutalist-outline {
+    @apply px-6 py-3 bg-transparent text-foreground font-semibold 
+           border-2 border-foreground transition-all duration-150;
+    box-shadow: 3px 3px 0 0 hsl(var(--primary));
+  }
+
+  .btn-brutalist-outline:hover {
+    @apply bg-foreground text-background;
+    box-shadow: 5px 5px 0 0 hsl(var(--primary));
+    transform: translate(-2px, -2px);
+  }
+
+  /* Horizontal rule */
+  .hr-amber {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-primary/50 to-transparent;
+  }
+
+  /* Noise texture overlay */
+  .noise-overlay {
+    position: relative;
+  }
+
+  .noise-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Grid pattern background */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Scanline effect */
+  .scanlines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(var(--charcoal) / 0.03) 2px,
+      hsl(var(--charcoal) / 0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 2;
+  }
+}
+
+@layer utilities {
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/50;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-foreground;
+  }
+}
+
+/* Keyframe animations */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.95; }
+  75% { opacity: 0.98; }
+}
+
+@keyframes terminal-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--amber) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--amber) / 0.5);
+  }
+}
+
+.animate-flicker {
+  animation: flicker 4s infinite;
+}
+
+.animate-terminal-blink {
+  animation: terminal-blink 1s infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Staggered animation delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }

@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap reference
+Sitemap: https://piyushpaul.dev/sitemap.xml
+
+# Disallow admin areas if they exist
+Disallow: /admin/
+Disallow: /wp-admin/
+
+# Disallow private files
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /temp/
+
+# Crawl-delay (optional, typically 1-10 seconds)
+Crawl-delay: 1
