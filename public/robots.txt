@@ -1,8 +1,9 @@
 User-agent: *
 Allow: /
 
-# Sitemap reference
 Sitemap: https://piyushpaul.dev/sitemap.xml
+
+Host: piyushpaul.dev
 
 # Disallow admin areas if they exist
 Disallow: /admin/

@@ -10,7 +10,7 @@ const projects = [
     description: 'AI-powered SaaS platform for business automation and digital growth. Co-founded and leading backend development.',
     stack: ['Python', 'AWS', 'AI/ML', 'REST APIs'],
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
-    link: 'https://dizitup.ai',
+    link: 'https://www.linkedin.com/company/dizitup/',
     featured: true,
   },
   {
@@ -23,13 +23,12 @@ const projects = [
     github: 'https://github.com/OPcheats',
   },
   {
-    title: 'PIYUSH OFFICIAL',
-    category: 'PORTFOLIO',
-    description: 'Personal portfolio showcasing skills and projects with a futuristic design.',
-    stack: ['React', 'Three.js', 'Framer'],
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
-    link: '#',
-    github: 'https://github.com/OPcheats',
+    title: 'AI VOICE DETECTION',
+    category: 'ML / PYTHON',
+    description: 'AI-powered voice detection system that distinguishes between AI-generated and human voices using machine learning algorithms.',
+    stack: ['Python', 'ML', 'FastAPI'],
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
+    github: 'https://github.com/OPcheats/ai-voice-detection',
   },
 ];
 
@@ -64,7 +63,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           {/* Featured badge */}
           {project.featured && (
             <div className="absolute top-4 left-4 px-3 py-1 bg-primary text-primary-foreground font-mono text-xs">
-              CO-FOUNDER
+              TECH-LEAD
             </div>
           )}
 

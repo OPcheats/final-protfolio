@@ -11,12 +11,14 @@ import Footer from '@/components/Footer';
 const Index = () => {
   return (
     <div className="relative min-h-screen bg-background overflow-x-hidden noise-overlay">
-      {/* Navigation */}
-      <Navigation />
-
-      {/* Main Content */}
-      <main>
+      <header>
+        {/* Navigation */}
+        <Navigation />
+        {/* Hero Section as part of header for SEO */}
         <HeroSection />
+      </header>
+
+      <main>
         <AboutSection />
         <ExperienceSection />
         <SkillsSection />
@@ -25,8 +27,10 @@ const Index = () => {
         <ContactSection />
       </main>
 
-      {/* Footer */}
-      <Footer />
+      <footer>
+        {/* Footer */}
+        <Footer />
+      </footer>
     </div>
   );
 };

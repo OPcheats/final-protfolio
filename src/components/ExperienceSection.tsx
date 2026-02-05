@@ -48,28 +48,30 @@ export function ExperienceSection() {
       <div className="absolute top-0 left-0 w-full hr-amber" />
       
       <div className="section-container" ref={ref}>
-        <div className="grid lg:grid-cols-12 gap-16">
-          {/* Left - Label */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-4"
-          >
-            <span className="section-label">02 / Experience</span>
-            <h2 className="section-title text-foreground">
-              PROFESSIONAL
-              <br />
-              <span className="text-primary">EXPERIENCE</span>
-            </h2>
-          </motion.div>
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="mb-20"
+        >
+          <span className="section-label">02 / Experience</span>
+          <h2 className="section-title text-foreground">
+            PROFESSIONAL
+            <br />
+            <span className="text-primary">EXPERIENCE</span>
+          </h2>
+        </motion.div>
 
-          {/* Right - Timeline */}
+        <div className="grid lg:grid-cols-12 gap-16 items-start">
+          {/* Timeline content will go here */}
+
+          {/* Timeline */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-8"
+            className="lg:col-span-12"
           >
             {experiences.map((exp, index) => (
               <div key={index} className={`relative pl-8 border-l-2 ${exp.isCurrent ? 'border-primary' : 'border-border'} ${index > 0 ? 'mt-8' : ''}`}>

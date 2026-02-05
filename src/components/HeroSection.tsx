@@ -37,18 +37,17 @@ export function HeroSection() {
               <span className="w-2 h-4 bg-primary animate-terminal-blink" />
             </motion.div>
 
-            {/* Name - Big, bold, brutalist */}
+            {/* Name - Big, bold, brutalist - Main H1 for SEO */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-extrabold leading-none mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-extrabold leading-tight mb-6"
             >
               <span className="text-foreground">PIYUSH</span>
               <br />
               <span className="text-primary amber-glow-subtle">PAUL</span>
             </motion.h1>
-            <h2 className="sr-only">Tech Lead & Backend Developer specializing in scalable systems, APIs, and AI-powered products</h2>
 
             {/* Role tags */}
             <motion.div

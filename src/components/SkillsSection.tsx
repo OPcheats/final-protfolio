@@ -41,7 +41,7 @@ export function SkillsSection() {
           <h2 className="section-title">
             <span className="text-foreground">TECHNICAL</span>
             <br />
-            <span className="text-primary">SKILLS</span>
+            <span className="text-primary">ARSENAL</span>
           </h2>
         </motion.div>
 
