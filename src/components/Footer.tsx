@@ -3,10 +3,10 @@ import { Github, Linkedin, Mail, ArrowUp, Instagram } from 'lucide-react';
 import { toast } from 'sonner';
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com/OPcheats', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://linkedin.com/in/piyush-paul-dev/', label: 'LinkedIn' },
-  { icon: Instagram, href: 'https://www.instagram.com/p.i.y.u.s.h__ai?igsh=MWJ6YTF2MDhvMmw0eQ==', label: 'Instagram' },
-  { icon: Mail, href: 'https://mail.google.com/mail/?view=cm&fs=1&to=piyushpaul108@gmail.com&su=Hello%20Piyush&body=Hi%20Piyush,%0A%0A', label: 'Email' },
+  { icon: Github, href: 'https://github.com/OPcheats', label: 'GitHub', external: true },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/piyush-paul-dev/', label: 'LinkedIn', external: true },
+  { icon: Instagram, href: 'https://www.instagram.com/p.i.y.u.s.h__ai?igsh=MWJ6YTF2MDhvMmw0eQ==', label: 'Instagram', external: true },
+  { icon: Mail, href: 'https://mail.google.com/mail/?view=cm&fs=1&to=piyushpaul108@gmail.com&su=Hello%20Piyush&body=Hi%20Piyush,%0A%0A', label: 'Email', external: true },
 ];
 
 export function Footer() {
@@ -25,12 +25,7 @@ export function Footer() {
     }
   };
 
-  const openExternal = async (url: string) => {
-    // Use setTimeout to avoid popup blockers for all URLs
-    setTimeout(() => {
-      window.open(url, '_blank', 'noopener,noreferrer');
-    }, 0);
-  };
+// ... existing code ...
 
   return (
     <footer className="relative py-16 overflow-hidden">
@@ -61,15 +56,11 @@ export function Footer() {
             className="flex justify-center gap-4"
           >
             {socialLinks.map((social) => (
-              // For all links, use the openExternal function which handles popup blockers properly
               <a
                 key={social.label}
-                href="#"
+                href={social.href}
+                {...social.external ? { target: "_blank", rel: "noopener noreferrer" } : {}}
                 aria-label={social.label}
-                onClick={(e) => {
-                  e.preventDefault();
-                  void openExternal(social.href);
-                }}
                 className="p-3 border-2 border-border hover:border-primary hover:text-primary text-muted-foreground transition-all duration-200"
               >
                 <social.icon size={18} />

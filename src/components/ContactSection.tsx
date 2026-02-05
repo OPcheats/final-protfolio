@@ -11,26 +11,31 @@ const contactLinks = [
     label: 'EMAIL',
     value: 'piyushpaul108@gmail.com',
     href: 'https://mail.google.com/mail/?view=cm&fs=1&to=piyushpaul108@gmail.com&su=Hello%20Piyush&body=Hi%20Piyush,%0A%0A',
+    external: true,
   },
   {
     icon: Linkedin,
     label: 'LINKEDIN',
-    value: '/piyush-paul-dev',
-    href: 'https://linkedin.com/in/piyush-paul-dev/',
+    value: 'linkedin.com/in/piyush-paul-dev',
+    href: 'https://www.linkedin.com/in/piyush-paul-dev/',
+    external: true,
   },
   {
     icon: Github,
     label: 'GITHUB',
-    value: '/OPcheats',
+    value: 'github.com/OPcheats',
     href: 'https://github.com/OPcheats',
+    external: true,
   },
   {
     icon: MapPin,
     label: 'LOCATION',
     value: 'Kolkata, India',
     href: null,
+    external: false,
   },
 ];
+
 
 export function ContactSection() {
   const ref = useRef(null);
@@ -91,7 +96,7 @@ export function ContactSection() {
             className="lg:col-span-5"
           >
             <span className="section-label">06 / Contact</span>
-            <h2 className="section-title mb-8">
+            <h2 className="section-title mb-8 break-words">
               <span className="text-foreground">GET IN</span>
               <br />
               <span className="text-primary">TOUCH</span>
@@ -143,8 +148,7 @@ export function ContactSection() {
                       // For HTTP links, use target and rel
                       <a
                         href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        {...item.external ? { target: "_blank", rel: "noopener noreferrer" } : {}}
                         className="group flex items-center gap-4 py-4 border-b border-border hover:border-primary transition-colors"
                       >
                         <item.icon size={18} className="text-primary" />

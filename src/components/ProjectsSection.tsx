@@ -142,7 +142,7 @@ export function ProjectsSection() {
           className="mb-20"
         >
           <span className="section-label">05 / Projects</span>
-          <h2 className="section-title">
+          <h2 className="section-title break-words">
             <span className="text-foreground">PROJECTS</span>
             <br />
             <span className="text-primary">SHOWCASE</span>

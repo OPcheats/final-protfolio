@@ -53,10 +53,10 @@ export function ExperienceSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-20"
+          className="mb-20 overflow-visible"
         >
           <span className="section-label">02 / Experience</span>
-          <h2 className="section-title text-foreground">
+          <h2 className="section-title text-foreground break-words">
             PROFESSIONAL
             <br />
             <span className="text-primary">EXPERIENCE</span>

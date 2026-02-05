@@ -581,6 +581,25 @@
     overflow: visible;
   }
   
+  /* Section title text fixes */
+  .section-title {
+    min-height: auto;
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+  }
+  
+  /* Service section specific fixes */
+  .grid.md\:grid-cols-12 > div {
+    min-width: 0;
+    word-break: break-word;
+  }
+  
+  /* Ensure arrows stay aligned */
+  .flex.items-center, .flex.justify-end {
+    align-items: center;
+  }
+  
   /* Ensure all text is visible */
   h1, h2, h3, h4, h5, h6, p, span {
     -webkit-hyphens: auto;

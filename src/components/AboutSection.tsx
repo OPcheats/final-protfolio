@@ -28,7 +28,7 @@ export function AboutSection() {
             className="lg:col-span-4"
           >
             <span className="section-label">01 / About</span>
-            <h2 className="section-title text-foreground">
+            <h2 className="section-title text-foreground break-words">
               ABOUT
               <br />
               <span className="text-primary">PIYUSH PAUL</span>

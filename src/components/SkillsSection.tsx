@@ -38,7 +38,7 @@ export function SkillsSection() {
           className="mb-20"
         >
           <span className="section-label">03 / Skills</span>
-          <h2 className="section-title">
+          <h2 className="section-title break-words">
             <span className="text-foreground">TECHNICAL</span>
             <br />
             <span className="text-primary">ARSENAL</span>

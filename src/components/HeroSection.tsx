@@ -111,28 +111,14 @@ export function HeroSection() {
             >
               <span className="font-mono text-xs text-muted-foreground">LINKS →</span>
               {[
-                { icon: Github, href: 'https://github.com/OPcheats' },
-                { icon: Linkedin, href: 'https://linkedin.com/in/piyush-paul-dev/' },
-                { icon: Mail, href: 'https://mail.google.com/mail/?view=cm&fs=1&to=piyushpaul108@gmail.com&su=Hello%20Piyush&body=Hi%20Piyush,%0A%0A' },
-              ].map(({ icon: Icon, href }) => (
+                { icon: Github, href: 'https://github.com/OPcheats', external: true },
+                { icon: Linkedin, href: 'https://www.linkedin.com/in/piyush-paul-dev/', external: true },
+                { icon: Mail, href: 'https://mail.google.com/mail/?view=cm&fs=1&to=piyushpaul108@gmail.com&su=Hello%20Piyush&body=Hi%20Piyush,%0A%0A', external: true },
+              ].map(({ icon: Icon, href, external }) => (
                 <a
                   key={href}
-                  href="#"
-                  onClick={(e) => {
-                    if (href.includes('google.com')) {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      // Direct window open without popup blockers
-                      window.open(href, '_blank', 'noopener,noreferrer');
-                    } else if (href.startsWith('http')) {
-                      // For other HTTP links, allow default behavior
-                      return;
-                    } else {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      window.location.href = href;
-                    }
-                  }}
+                  href={href}
+                  {...external ? { target: "_blank", rel: "noopener noreferrer" } : {}}
                   className="p-2 border-2 border-border hover:border-primary hover:text-primary text-muted-foreground transition-all duration-200"
                 >
                   <Icon size={18} />

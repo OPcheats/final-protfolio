@@ -48,7 +48,7 @@ export function ServicesSection() {
           className="mb-20"
         >
           <span className="section-label">04 / Services</span>
-          <h2 className="section-title">
+          <h2 className="section-title break-words">
             <span className="text-foreground">SERVICES</span>
             <br />
             <span className="text-primary">OFFERED</span>
@@ -67,7 +67,7 @@ export function ServicesSection() {
             >
               <div className="py-8 grid md:grid-cols-12 gap-4 md:gap-8 items-center cursor-pointer hover:bg-card/50 transition-colors px-4 -mx-4">
                 {/* Number */}
-                <div className="md:col-span-1">
+                <div className="md:col-span-1 flex items-center">
                   <span className="font-mono text-sm text-primary">{service.number}</span>
                 </div>
                 
@@ -86,8 +86,8 @@ export function ServicesSection() {
                 </div>
                 
                 {/* Arrow */}
-                <div className="md:col-span-1 flex justify-end">
-                  <div className="w-10 h-10 border-2 border-border group-hover:border-primary group-hover:bg-primary flex items-center justify-center transition-all duration-300">
+                <div className="md:col-span-1 flex justify-end items-center">
+                  <div className="w-10 h-10 border-2 border-border group-hover:border-primary group-hover:bg-primary flex items-center justify-center transition-all duration-300 flex-shrink-0">
                     <ArrowUpRight 
                       size={18} 
                       className="text-muted-foreground group-hover:text-primary-foreground transition-colors" 
