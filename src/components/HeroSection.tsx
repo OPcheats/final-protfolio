@@ -11,7 +11,7 @@ export function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <section id="home" className="relative min-h-screen flex items-center overflow-visible pt-20">
       {/* Background grid pattern */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
       

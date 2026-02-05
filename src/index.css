@@ -501,6 +501,97 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
+  /* Mobile-specific text overflow fixes */
+  .section-title br {
+    display: block;
+  }
+  
+  .section-title {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+  
+  /* Force proper line breaks on mobile */
+  .text-4xl, .text-5xl, .text-6xl, .text-7xl, .text-8xl {
+    line-height: 1.2 !important;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+  }
+  
+  /* Mobile container fixes */
+  .section-container {
+    overflow: visible;
+    min-width: 100%;
+  }
+  
+  /* Grid layout fixes for mobile */
+  .grid {
+    overflow: visible;
+    width: 100%;
+  }
+  
+  .lg\:col-span-4, .lg\:col-span-8, .lg\:col-span-12 {
+    min-width: 0;
+    overflow: visible;
+  }
+  
+  /* Prevent text clipping in flex containers */
+  .flex {
+    min-width: 0;
+    flex-shrink: 0;
+  }
+  
+  .items-start, .items-center {
+    align-items: flex-start !important;
+  }
+  
+  /* Project card specific fixes */
+  .brutalist-card-hover {
+    overflow: visible;
+    min-height: auto;
+  }
+  
+  .p-8 {
+    overflow: visible;
+  }
+  
+  /* Experience section timeline fixes */
+  .pl-8 {
+    min-width: 0;
+  }
+  
+  .relative.pl-8 {
+    overflow: visible;
+  }
+  
+  /* Global text visibility fixes */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    overflow: visible;
+  }
+  
+  /* Section content containers */
+  .brutalist-card, .brutalist-card-hover {
+    overflow: visible;
+  }
+  
+  /* Content wrappers */
+  .space-y-6, .space-y-4, .space-y-2 {
+    overflow: visible;
+  }
+  
+  /* Ensure all text is visible */
+  h1, h2, h3, h4, h5, h6, p, span {
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+  }
+  
   /* Mobile Project Card Improvements - ensure minimum readability */
   .p-6 { padding: 1.25rem; }
   

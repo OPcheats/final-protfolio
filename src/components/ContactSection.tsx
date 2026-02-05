@@ -78,7 +78,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative py-32 overflow-hidden">
+    <section id="contact" className="relative py-32 overflow-visible">
       <div className="absolute top-0 left-0 w-full hr-amber" />
       
       <div className="section-container" ref={ref}>

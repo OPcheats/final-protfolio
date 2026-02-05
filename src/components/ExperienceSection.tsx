@@ -44,7 +44,7 @@ export function ExperienceSection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="experience" className="relative py-32 overflow-hidden">
+    <section id="experience" className="relative py-32 overflow-visible">
       <div className="absolute top-0 left-0 w-full hr-amber" />
       
       <div className="section-container" ref={ref}>

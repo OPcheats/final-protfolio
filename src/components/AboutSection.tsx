@@ -13,7 +13,7 @@ export function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="about" className="relative py-32 overflow-hidden">
+    <section id="about" className="relative py-32 overflow-visible">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full hr-amber" />
       <div className="absolute top-20 right-0 w-1/3 h-px bg-border" />
