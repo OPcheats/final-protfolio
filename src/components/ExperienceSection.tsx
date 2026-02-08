@@ -80,16 +80,16 @@ export function ExperienceSection() {
                 
                 <div className="brutalist-card-hover p-8">
                   {/* Header */}
-                  <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
-                    <div className="flex items-start gap-4">
+                  <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-start sm:justify-between gap-4 mb-6">
+                    <div className="flex items-start gap-4 min-w-0 flex-1 w-full sm:w-auto">
                       {exp.logo && (
                         <img 
                           src={exp.logo} 
                           alt={`Logo of ${exp.company} - ${exp.title} at ${exp.company}`}
-                          className="w-14 h-14 object-contain bg-white rounded p-1"
+                          className="w-14 h-14 object-contain bg-white rounded p-1 flex-shrink-0"
                         />
                       )}
-                      <div>
+                      <div className="min-w-0 flex-1 overflow-hidden">
                         {exp.isCurrent && (
                           <span className="inline-block px-3 py-1 mb-3 font-mono text-xs bg-primary text-primary-foreground">
                             CURRENT
@@ -100,22 +100,22 @@ export function ExperienceSection() {
                             {exp.duration}
                           </span>
                         )}
-                        <h3 className="text-2xl font-display font-bold text-foreground">
+                        <h3 className="text-2xl font-display font-bold text-foreground break-words">
                           {exp.title}
                         </h3>
-                        <p className="text-primary font-medium mt-1">{exp.company}</p>
+                        <p className="text-primary font-medium mt-1 break-words">{exp.company}</p>
                         {exp.location && (
-                          <p className="text-sm text-muted-foreground mt-1">{exp.location}</p>
+                          <p className="text-sm text-muted-foreground mt-1 break-words">{exp.location}</p>
                         )}
                       </div>
                     </div>
-                    <span className="font-mono text-sm text-muted-foreground">
+                    <span className="font-mono text-sm text-muted-foreground flex-shrink-0 w-full sm:w-auto">
                       {exp.period}
                     </span>
                   </div>
 
                   {/* Description */}
-                  <p className="text-muted-foreground mb-6">{exp.description}</p>
+                  <p className="text-muted-foreground mb-6 break-words">{exp.description}</p>
 
                   {/* Responsibilities */}
                   <div className="mb-8">
@@ -129,10 +129,10 @@ export function ExperienceSection() {
                           initial={{ opacity: 0, x: -10 }}
                           animate={isInView ? { opacity: 1, x: 0 } : {}}
                           transition={{ delay: 0.4 + i * 0.1 }}
-                          className="flex items-start gap-3 text-muted-foreground"
+                          className="flex items-start gap-3 text-muted-foreground min-w-0"
                         >
                           <span className="w-1.5 h-1.5 mt-2 bg-primary flex-shrink-0" />
-                          <span>{item}</span>
+                          <span className="break-words flex-1 min-w-0">{item}</span>
                         </motion.li>
                       ))}
                     </ul>

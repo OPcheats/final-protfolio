@@ -600,6 +600,65 @@
     align-items: center;
   }
   
+  /* Experience section text fixes */
+  .brutalist-card-hover .text-2xl {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Services section fixes */
+  .border-t-2.border-border .py-8.grid {
+    align-items: center;
+  }
+  
+  /* Proper alignment for service items */
+  .md\:col-span-1.flex.justify-end.items-center {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Center arrows vertically in service rows */
+  .py-8.grid.md\:grid-cols-12 > div:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Perfectly center the arrow within its container */
+  .w-10.h-10.border-2.border-border.group-hover\:border-primary.group-hover\:bg-primary {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative;
+  }
+  
+  /* Ensure arrow icon is perfectly centered */
+  .w-10.h-10.border-2 svg {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Services section - ensure arrow stays next to description on mobile */
+  .py-8.grid.md\:grid-cols-12 > div.flex {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  
+  /* Services arrow box alignment */
+  .py-8.grid.md\:grid-cols-12 .md\:col-span-6.flex {
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .py-8.grid.md\:grid-cols-12 .md\:col-span-6.flex .w-10 {
+    flex-shrink: 0;
+  }
+  
   /* Ensure all text is visible */
   h1, h2, h3, h4, h5, h6, p, span {
     -webkit-hyphens: auto;
@@ -644,4 +703,44 @@
     font-size: clamp(0.75rem, 1.5vw, 0.75rem); 
     line-height: 1.5; 
   }
+  
+  /* Experience Section Mobile Overflow Fixes */
+  .brutalist-card-hover {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .brutalist-card-hover .flex.flex-col {
+    width: 100%;
+  }
+  
+  .brutalist-card-hover .flex.items-start {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .brutalist-card-hover .min-w-0 {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .brutalist-card-hover h3,
+  .brutalist-card-hover p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  
+  .brutalist-card-hover li {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  
+  .brutalist-card-hover li span {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  
 }

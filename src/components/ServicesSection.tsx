@@ -67,26 +67,23 @@ export function ServicesSection() {
             >
               <div className="py-8 grid md:grid-cols-12 gap-4 md:gap-8 items-center cursor-pointer hover:bg-card/50 transition-colors px-4 -mx-4">
                 {/* Number */}
-                <div className="md:col-span-1 flex items-center">
+                <div className="md:col-span-1 flex items-center justify-center">
                   <span className="font-mono text-sm text-primary">{service.number}</span>
                 </div>
                 
                 {/* Title */}
                 <div className="md:col-span-4">
-                  <h3 className="font-display text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="font-display text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors break-words">
                     {service.title}
                   </h3>
                 </div>
                 
-                {/* Description */}
-                <div className="md:col-span-6">
-                  <p className="text-muted-foreground">
+                {/* Description with Arrow */}
+                <div className="md:col-span-6 flex items-center gap-4">
+                  <p className="text-muted-foreground break-words flex-1">
                     {service.description}
                   </p>
-                </div>
-                
-                {/* Arrow */}
-                <div className="md:col-span-1 flex justify-end items-center">
+                  {/* Arrow */}
                   <div className="w-10 h-10 border-2 border-border group-hover:border-primary group-hover:bg-primary flex items-center justify-center transition-all duration-300 flex-shrink-0">
                     <ArrowUpRight 
                       size={18} 
