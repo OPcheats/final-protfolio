@@ -67,7 +67,7 @@ export function AboutSection() {
                 I'm a backend engineer obsessed with building systems that{' '}
                 <span className="text-foreground font-medium">actually work at scale</span>. 
                 Currently pursuing my BCA at Techno India Kolkata while leading backend 
-                development at Dizitup.ai — an AI-powered SaaS platform I co-founded.
+                development at Dizitup.ai — an AI-powered SaaS platform I Tech Lead.
               </p>
               <p>
                 My journey started with curiosity about how software works under the hood. 

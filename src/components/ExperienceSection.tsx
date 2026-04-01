@@ -6,8 +6,8 @@ import dizitupLogo from '@/assets/dizitup-logo.jpg';
 
 const experiences = [
   {
-    title: 'Backend Developer & Tech Lead',
-    company: 'Dizitup.ai',
+    title: 'Tech Lead',
+    company: 'Dizitup.com',
     period: '2025 — Present',
     isCurrent: true,
     logo: dizitupLogo,

@@ -1,9 +1,9 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://piyushpaul.dev/sitemap.xml
+Sitemap: https://piyushpaul.in/sitemap.xml
 
-Host: piyushpaul.dev
+Host: piyushpaul.in
 
 # Disallow admin areas if they exist
 Disallow: /admin/

@@ -5,12 +5,12 @@ import { ArrowUpRight, Github } from 'lucide-react';
 
 const projects = [
   {
-    title: 'DIZITUP.AI',
+    title: 'DIZITUP.COM',
     category: 'SAAS / AI',
     description: 'AI-powered SaaS platform for business automation and digital growth. Co-founded and leading backend development.',
     stack: ['Python', 'AWS', 'AI/ML', 'REST APIs'],
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
-    link: 'https://www.linkedin.com/company/dizitup/',
+    link: 'https://dizitup.com',
     featured: true,
   },
   {
