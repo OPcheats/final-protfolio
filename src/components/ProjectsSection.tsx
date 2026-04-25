@@ -5,22 +5,21 @@ import { ArrowUpRight, Github } from 'lucide-react';
 
 const projects = [
   {
+    title: 'SAMADHAN',
+    category: 'MOBILE APP / FULL STACK',
+    description: 'Samadhan is a premium home services platform that connects users with skilled professionals like electricians, plumbers, and more via a seamless booking flow and instant WhatsApp connection.',
+    stack: ['Flutter', 'Appwrite', 'Riverpod', '2Factor API'],
+    image: '/projects/samadhan.png',
+    link: 'https://play.google.com/store/apps/details?id=com.shamadhan.anti_shamadhan',
+    featured: true,
+  },
+  {
     title: 'DIZITUP.COM',
     category: 'SAAS / AI',
     description: 'AI-powered SaaS platform for business automation and digital growth. Co-founded and leading backend development.',
     stack: ['Python', 'AWS', 'AI/ML', 'REST APIs'],
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
     link: 'https://dizitup.com',
-    featured: true,
-  },
-  {
-    title: 'KAUSHIK FIT HUB',
-    category: 'WEB',
-    description: 'Modern gym website designed to engage fitness enthusiasts with seamless UX.',
-    stack: ['React', 'Tailwind'],
-    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80',
-    link: '#',
-    github: 'https://github.com/OPcheats',
   },
   {
     title: 'AI VOICE DETECTION',
@@ -103,7 +102,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground font-mono text-xs hover:bg-primary/90 transition-colors"
               >
-                VISIT
+                {project.title === 'SAMADHAN' ? 'LIVE APP' : 'VISIT'}
                 <ArrowUpRight size={14} />
               </a>
             )}
