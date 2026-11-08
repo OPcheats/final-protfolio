@@ -3,7 +3,18 @@ import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { ArrowUpRight, Github } from 'lucide-react';
 
-const projects = [
+interface Project {
+  title: string;
+  category: string;
+  description: string;
+  stack: string[];
+  image: string;
+  link?: string;
+  github?: string;
+  featured?: boolean;
+}
+
+const projects: Project[] = [
   {
     title: 'SAMADHAN',
     category: 'MOBILE APP / FULL STACK',
@@ -22,12 +33,12 @@ const projects = [
     link: 'https://dizitup.com',
   },
   {
-    title: 'AI VOICE DETECTION',
-    category: 'ML / PYTHON',
-    description: 'AI-powered voice detection system that distinguishes between AI-generated and human voices using machine learning algorithms.',
-    stack: ['Python', 'ML', 'FastAPI'],
+    title: 'F.R.I.D.A.Y AI',
+    category: 'OS / AI',
+    description: 'A real operating-system intelligence — voice, vision, and native control across your machine.',
+    stack: ['React', 'TypeScript', 'Python', 'AI/ML', 'Voice AI', 'Computer Vision'],
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
-    github: 'https://github.com/OPcheats/ai-voice-detection',
+    link: 'https://friday-os-theta.vercel.app/',
   },
 ];
 
@@ -58,7 +69,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           />
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
-          
+
           {/* Featured badge */}
           {project.featured && (
             <div className="absolute top-4 left-4 px-3 py-1 bg-primary text-primary-foreground font-mono text-xs">
@@ -131,7 +142,7 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="relative py-32 overflow-visible">
       <div className="absolute top-0 left-0 w-full hr-amber" />
-      
+
       <div className="section-container" ref={ref}>
         {/* Header */}
         <motion.div

@@ -8,16 +8,16 @@ const experiences = [
   {
     title: 'Tech Lead',
     company: 'Dizitup.com',
-    period: '2025 — Present',
-    isCurrent: true,
+    period: '2025 — Sep 2025',
+    isCurrent: false,
     logo: dizitupLogo,
-    description: 'Leading backend architecture and development for an AI-powered SaaS platform focused on business automation and digital growth.',
+    description: 'Led backend architecture and development for an AI-powered SaaS platform focused on business automation and digital growth.',
     responsibilities: [
-      'Architecting scalable backend systems using Python',
-      'Building and maintaining RESTful APIs',
-      'Implementing AI-powered automation features',
-      'Setting up AWS infrastructure and CI/CD pipelines',
-      'Collaborating on product development strategy',
+      'Architected scalable backend systems using Python',
+      'Built and maintained RESTful APIs',
+      'Implemented AI-powered automation features',
+      'Set up AWS infrastructure and CI/CD pipelines',
+      'Collaborated on product development strategy',
     ],
     stack: ['Python', 'AWS', 'PostgreSQL', 'REST APIs', 'AI/ML'],
   },
@@ -46,7 +46,7 @@ export function ExperienceSection() {
   return (
     <section id="experience" className="relative py-32 overflow-visible">
       <div className="absolute top-0 left-0 w-full hr-amber" />
-      
+
       <div className="section-container" ref={ref}>
         {/* Header */}
         <motion.div
@@ -77,14 +77,14 @@ export function ExperienceSection() {
               <div key={index} className={`relative pl-8 border-l-2 ${exp.isCurrent ? 'border-primary' : 'border-border'} ${index > 0 ? 'mt-8' : ''}`}>
                 {/* Timeline dot */}
                 <div className={`absolute left-0 top-0 w-4 h-4 -translate-x-[9px] ${exp.isCurrent ? 'bg-primary animate-glow-pulse' : 'bg-muted-foreground'}`} />
-                
+
                 <div className="brutalist-card-hover p-8">
                   {/* Header */}
                   <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-start sm:justify-between gap-4 mb-6">
                     <div className="flex items-start gap-4 min-w-0 flex-1 w-full sm:w-auto">
                       {exp.logo && (
-                        <img 
-                          src={exp.logo} 
+                        <img
+                          src={exp.logo}
                           alt={`Logo of ${exp.company} - ${exp.title} at ${exp.company}`}
                           className="w-14 h-14 object-contain bg-white rounded p-1 flex-shrink-0"
                         />
