@@ -8,7 +8,7 @@ const experiences = [
   {
     title: 'Tech Lead',
     company: 'Dizitup.com',
-    period: '2025 — Sep 2025',
+    period: '2025 — Sep 2026',
     isCurrent: false,
     logo: dizitupLogo,
     description: 'Led backend architecture and development for an AI-powered SaaS platform focused on business automation and digital growth.',
